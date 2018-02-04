@@ -1,0 +1,24 @@
+od-dashboard {
+  display: block;
+  padding-bottom: $gutter;
+}
+
+od-dashboard-home-component {
+  display: block;
+  padding: $gutter 0;
+}
+
+.od_dashboard {
+  &__empty {
+    text-align: center;
+    &__message {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: $gutter;
+      >span {
+        // display: inline-block;
+        // transform: rotate(90deg);
+      }
+    }
+  }
+}
