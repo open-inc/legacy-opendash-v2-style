@@ -1,130 +1,109 @@
   $container-width: 100%;
-  $gutter: 20px;
-
-  // $breakpoints: (
+  $gutter: 20px; // $breakpoints: (
   //   'xs': 320px,
   //   'sm': 480px,
   //   'md': 640px,
   //   'lg': 1024px,
   //   'xl': 1280px
   // );
-
-  $widths: (10,20,25,30,33.3333,40,50,60,66.6666,70,75,80,90,100);
-
-// Grid
-// ––––––––––––––––––––––––––––––––––––––––––––––––––
-// Inspiriert von milligram
-
-.container {
-	margin: 0 auto;
-	min-width: 300px;
-	max-width: $container-width;
-	padding: 0 $gutter;
-	position: relative;
-	width: 100%;
-}
-
-@media only screen and (max-width: 550px) {
-	.container {
-		margin: 0;
-		min-width: 300px;
-		max-width: $container-width;
-		padding: 0;
-		position: relative;
-		width: 100%;
-	}
-}
-
-
-// defaults:
-// - Alle .col in einer .row sind gleich groß und nehmen die volle breite ein
-// - Alle .col in einer .row haben die gleiche Größe, wie die größte .col
-
-.row {
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	width: 100%;
-
-	&.row--no-padding {
-		padding: 0;
-
-		&> .col {
-			padding: 0
-		}
-	}
-
-	&.row--wrap {
-		flex-wrap: wrap
-	}
-	// Vertically Align Columns
-	// .row-* vertically aligns every .col in the .row
-	&.row--top {
-		align-items: flex-start;
+  $widths: (10, 20, 25, 30, 33.3333, 40, 50, 60, 66.6666, 70, 75, 80, 90, 100);
+  // Grid
+  // ––––––––––––––––––––––––––––––––––––––––––––––––––
+  // Inspiriert von milligram
+  .container {
+      margin: 0 auto;
+      min-width: 300px;
+      max-width: $container-width;
+      padding: 0 $gutter;
+      position: relative;
+      width: 100%;
   }
 
-	&.row--bottom {
-		align-items: flex-end;
-  }
-
-	&.row--center {
-		align-items: center;
-  }
-
-	&.row--stretch {
-		align-items: stretch;
-  }
-
-	&.row--baseline {
-		align-items: baseline;
-  }
-
-	.col {
-		display: block;
-		flex: 1;
-		margin-left: 0;
-		max-width: 100%;
-		width: 100%;
-
-    @each $key, $value in $breakpoints {
-      @include media(">#{$key}") {
-        @each $i in $widths {
-
-          &--#{$key}-#{floor($i)}{
-            flex: 0 0 1%*$i;
-            max-width: 1%*$i;
-          }
-
-          &--#{$key}-#{floor($i)}-offset{
-            margin-left: 1%*$i;
-          }
-
-        }
+  @media only screen and (max-width: 550px) {
+      .container {
+          margin: 0;
+          min-width: 300px;
+          max-width: $container-width;
+          padding: 0;
+          position: relative;
+          width: 100%;
       }
-    }
-
-		// .column--* vertically aligns an individual .column
-		.col--top {
-			align-self: flex-start;
-    }
-		.col--bottom {
-			align-self: flex-end;
-    }
-		.col--center {
-			align-self: center;
-    }
-	}
-}
-// Larger than mobile screen
-@include media(">xs") {
-	.row {
-		flex-direction: row;
-		margin-left: -$gutter/2;
-		width: calc(100% + 2.0rem);
-
-		.col {
-			margin-bottom: inherit;
-			padding: 0 $gutter/2;
-    }
   }
-}
+
+  // defaults:
+  // - Alle .col in einer .row sind gleich groß und nehmen die volle breite ein
+  // - Alle .col in einer .row haben die gleiche Größe, wie die größte .col
+  .row {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      width: 100%;
+      &.row--no-padding {
+          padding: 0;
+          &>.col {
+              padding: 0
+          }
+      }
+      &.row--wrap {
+          flex-wrap: wrap
+      } // Vertically Align Columns
+      // .row-* vertically aligns every .col in the .row
+      &.row--top {
+          align-items: flex-start;
+      }
+      &.row--bottom {
+          align-items: flex-end;
+      }
+      &.row--center {
+          align-items: center;
+      }
+      &.row--stretch {
+          align-items: stretch;
+      }
+      &.row--baseline {
+          align-items: baseline;
+      }
+      .col {
+          display: block;
+          flex: 1;
+          margin-left: 0;
+          max-width: 100%;
+          width: 100%;
+          @each $key,
+          $value in $breakpoints {
+              @include media(">#{$key}") {
+                  @each $i in $widths {
+                      &--#{$key}-#{floor($i)} {
+                          flex: 0 0 1%*$i;
+                          max-width: 1%*$i;
+                      }
+                      &--#{$key}-#{floor($i)}-offset {
+                          margin-left: 1%*$i;
+                      }
+                  }
+              }
+          } // .column--* vertically aligns an individual .column
+          .col--top {
+              align-self: flex-start;
+          }
+          .col--bottom {
+              align-self: flex-end;
+          }
+          .col--center {
+              align-self: center;
+          }
+      }
+  }
+
+  // Larger than mobile screen
+  @include media(">xs") {
+      .row {
+          flex-direction: row;
+          margin-left: -$gutter/2;
+          width: calc(100% + 2.0rem);
+          .col {
+              margin-bottom: inherit;
+              padding: 0 $gutter/2;
+          }
+      }
+  }
