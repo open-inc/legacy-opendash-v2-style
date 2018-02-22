@@ -1,0 +1,54 @@
+$color-picker-height: 38px;
+$color-picker-input-width: 90px;
+$color-picker-rows: 14;
+$color-picker-item-size: 20px;
+
+od-color-picker {
+
+    display: inline-block;
+
+    height: $color-picker-height;
+    width: $color-picker-height + $color-picker-input-width;
+
+    .selection {
+        height: $color-picker-height;
+        width: 100%;
+    
+        cursor: pointer;
+
+        &-input {
+            width: 90px;
+            text-align: center;
+            border-right-width: 0px;
+        }
+
+        &-preview {
+            display: block;
+            float: right;
+            height: $color-picker-height;
+            width: $color-picker-height;
+
+            border: .1rem solid #ccc;
+            border-left-width: 0px;
+        }
+    }
+
+    .picker {
+        @extend .clearfix;
+
+        position: absolute;
+        background: black;
+        width: $color-picker-rows * $color-picker-item-size + 4px;
+        padding: 2px;
+
+        z-index: 5010;
+    }
+    
+    .picker-item {
+        display: block;
+        cursor: pointer;
+        float: left;
+        width: $color-picker-item-size;
+        height: $color-picker-item-size;
+    }
+}
