@@ -146,29 +146,36 @@ od-eud-editor {
             &__item {
                 height: $eud-selection-height;
                 line-height: $eud-selection-height;
-                border: 1px solid rgba(0, 0, 0, .1);
+                border: 0px solid rgba(0, 0, 0, .1);
                 &:not(:last-child) {
-                    border-bottom-width: 0px;
+                    border-width: 0px;
                 }
                 &:hover {
                     background: rgba(0, 0, 0, .02);
                 }
                 &__name {
+                    float:left;
                     margin: 0 $eud-selection-height;
                     height: $eud-selection-height;
                     padding: 0 $gutter;
+                    width:40%;
                 }
                 &__icon {
                     float: left;
                     height: $eud-selection-height;
-                    width: $eud-selection-height;
-                    padding: $gutter/2;
+                    width: 5%;
                     img {
                         padding: $gutter/2;
                         background: rgba(0, 0, 0, .05);
                         border-radius: 50%;
                         border: 1px solid rgba(0, 0, 0, .1);
                     }
+                }
+
+                &__color {
+                    float: left;
+                    height: $eud-selection-height;
+                    width: 25%;
                 }
             }
         }

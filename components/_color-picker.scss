@@ -13,11 +13,12 @@ od-color-picker {
     .selection {
         height: $color-picker-height;
         width: 100%;
-    
+        height: 3.8rem;
+margin-bottom: 1.5rem;
         cursor: pointer;
 
         &-input {
-            width: 90px;
+            width: 110px;
             text-align: center;
             border-right-width: 0px;
         }
@@ -30,6 +31,8 @@ od-color-picker {
 
             border: .1rem solid #ccc;
             border-left-width: 0px;
+            height: 3.8rem;
+margin-top: 1.1rem;
         }
     }
 
