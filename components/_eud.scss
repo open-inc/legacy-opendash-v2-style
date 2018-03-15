@@ -12,21 +12,24 @@ od-eud-editor {
     $eud-nav-inline-gap: 4px;
     $eud-nav-grey: #d6d6d6;
     $eud-nav-active: $active-color;
-    $eud-nav-done: #58bb58;
+    $eud-nav-done: $primary;
     $eud-nav-after: $eud-nav-grey - #444;
     $eud-footer-height: 60px;
     margin: -1 * $modal-padding;
-
     .noselect {
-        -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-           -khtml-user-select: none; /* Konqueror HTML */
-             -moz-user-select: none; /* Firefox */
-              -ms-user-select: none; /* Internet Explorer/Edge */
-                  user-select: none; /* Non-prefixed version, currently
-                                        supported by Chrome and Opera */
-      }
-
+        /* iOS Safari */
+        -webkit-touch-callout: none;
+        /* Safari */
+        -webkit-user-select: none;
+        /* Konqueror HTML */
+        -khtml-user-select: none;
+        /* Firefox */
+        -moz-user-select: none;
+        /* Internet Explorer/Edge */
+        -ms-user-select: none;
+        /* Non-prefixed version, currently supported by Chrome and Opera */
+        user-select: none;
+    }
     .eud {
         &__footer {
             text-align: right;
@@ -154,11 +157,11 @@ od-eud-editor {
                     background: rgba(0, 0, 0, .02);
                 }
                 &__name {
-                    float:left;
+                    float: left;
                     margin: 0 $eud-selection-height;
                     height: $eud-selection-height;
                     padding: 0 $gutter;
-                    width:40%;
+                    width: 40%;
                 }
                 &__icon {
                     float: left;
@@ -171,7 +174,6 @@ od-eud-editor {
                         border: 1px solid rgba(0, 0, 0, .1);
                     }
                 }
-
                 &__color {
                     float: left;
                     height: $eud-selection-height;
