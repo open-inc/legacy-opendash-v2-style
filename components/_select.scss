@@ -3,7 +3,7 @@ od-select-item {
     $steps: 4;
     $gutter: 16px;
     $modal-padding: 20px;
-    $active-color: #4485dd;
+    $active-color: $primary;
     $eud-selection-height: 60px;
     $eud-nav-item-count: 4;
     $eud-nav-border: 4px;
@@ -12,7 +12,7 @@ od-select-item {
     $eud-nav-inline-gap: 4px;
     $eud-nav-grey: #d6d6d6;
     $eud-nav-active: $active-color;
-    $eud-nav-done: #58bb58;
+    $eud-nav-done: $primary;
     $eud-nav-after: $eud-nav-grey - #444;
     $eud-footer-height: 60px;
     .od-select-item {
@@ -79,7 +79,7 @@ od-select-item {
 od-select-date {
     display: block;
     padding: 0px;
-    $active-color: #4485dd;
+    $active-color: $primary;
     .od-select-date {
         &--active {
             color: $active-color;

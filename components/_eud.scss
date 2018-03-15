@@ -3,7 +3,7 @@ od-eud-editor {
     $steps: 4;
     $gutter: 5px;
     $modal-padding: 20px;
-    $active-color: #4485dd;
+    $active-color: $primary;
     $eud-selection-height: 60px;
     $eud-nav-item-count: 4;
     $eud-nav-border: 4px;
@@ -16,6 +16,16 @@ od-eud-editor {
     $eud-nav-after: $eud-nav-grey - #444;
     $eud-footer-height: 60px;
     margin: -1 * $modal-padding;
+
+    .eud__nav__item--done:before {
+        background-color: $primary !important;
+      }
+    
+      .eud__nav__item--active:before {
+        background-color: $primary !important;
+      }
+
+
     .noselect {
         /* iOS Safari */
         -webkit-touch-callout: none;
@@ -53,7 +63,8 @@ od-eud-editor {
                     border-color: $eud-nav-active;
                     color: $eud-nav-active;
                     &:before {
-                        background: linear-gradient(to right, $eud-nav-done 0%, $eud-nav-active 100%);
+                        background: $active-color;
+                        //background: linear-gradient(to right, $eud-nav-done 100%, $eud-nav-active 100%);
                     }
                     &:after {
                         color: $eud-nav-active;
