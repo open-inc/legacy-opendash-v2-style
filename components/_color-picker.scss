@@ -1,4 +1,4 @@
-$color-picker-height: 38px;
+$color-picker-height: 20px;
 $color-picker-input-width: 90px;
 $color-picker-rows: 14;
 $color-picker-item-size: 20px;
@@ -11,28 +11,32 @@ od-color-picker {
     width: $color-picker-height + $color-picker-input-width;
 
     .selection {
+        position: relative;
         height: $color-picker-height;
         width: 100%;
         height: 3.8rem;
-margin-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
         cursor: pointer;
 
         &-input {
-            width: 110px;
+            // width: 110px;
             text-align: center;
-            border-right-width: 0px;
+            border: 0;
+            border-bottom: 2px solid #cfcfcf;
         }
 
         &-preview {
             display: block;
-            float: right;
+
+            position: absolute;
+            bottom: 0px;
+            right: 5px;
+
             height: $color-picker-height;
             width: $color-picker-height;
 
             border: .1rem solid #ccc;
-            border-left-width: 0px;
-            height: 3.8rem;
-margin-top: 1.1rem;
+            // margin-top: 1.1rem;
         }
     }
 
